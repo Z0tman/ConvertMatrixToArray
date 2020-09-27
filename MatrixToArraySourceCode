@@ -1,0 +1,29 @@
+#include <iostream>
+
+int main()
+{
+    const int k = 3, l = 4; //set row and columns
+    int mValue[k][l]; //get matrix of k rows and l columns
+    int arrBuffer[k*l] ={}; //initialize the output list
+
+    //First loop to fill the matrix with dissociated values to print out
+    for (int i = 0; i < k; i++) {
+        for (int j = 0; j < l; j++) {
+
+            mValue[i][j] = i+j+i*(j+l);
+            std::cout << " ["<<mValue[i][j] << "]";
+            
+        }
+        std::cout << ",\n";
+    }
+
+    //second reversed loop to get the unified array from the previous matrix
+    for (int u = 0; u < 1; u++) {
+        for (int i = 0; i < k; i++) {
+            for (int j = 0; j < l; j++) {
+                arrBuffer[u] = mValue[i][j];
+                std::cout << "[" << arrBuffer[u] << "] ";
+            }
+        }
+    }
+}
